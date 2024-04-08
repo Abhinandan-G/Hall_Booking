@@ -1,0 +1,52 @@
+
+
+Master Data for Hall & period booking:
+
+Hall 1 Period 1 Free/Booked Admin 1 Faculty 1
+Hall 1 Period 2 Free/Booked Admin 1 Faculty 1
+Hall 1 Period 3 Free/Booked Admin 1 Faculty 1
+Hall 1 Period 4 Free/Booked Admin 1 Faculty 1
+Hall 1 Period 5 Free/Booked Admin 1 Faculty 1
+Hall 1 Period 6 Free/Booked Admin 1 Faculty 1
+Hall 1 Period 7 Free/Booked Admin 1 Faculty 1
+
+Hall 2 Period 1
+Hall 2 Period 2
+Hall 2 Period 3
+Hall 2 Period 4
+Hall 2 Period 5
+Hall 2 Period 6
+Hall 2 Period 7
+
+Hall 3 Period 1
+Hall 3 Period 2
+Hall 3 Period 3
+Hall 3 Period 4
+Hall 3 Period 5
+Hall 3 Period 6
+Hall 3 Period 7
+
+Available/Free
+
+select * from hall_booking_status
+where hall_status = 'Free'
+;
+
+Booked
+
+select * from hall_booking_status
+where hall_status = 'Booked'
+;
+
+
+insert into hall_booking_status
+values('Hall_1','Hour_5','Booked','Admin_1','','');
+
+insert into hall_booking_status
+values('Hall_1','Hour_5','Booked','Admin_1','','');
+
+insert into hall_booking_status
+values('Hall_1','Hour_5','Booked','Admin_1','','');
+
+insert into hall_booking_status
+values('Hall_1','Hour_5','Booked','Admin_1','','');

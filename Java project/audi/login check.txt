@@ -1,0 +1,47 @@
+package utils;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.*;
+
+public class Login {
+	public static void main(String args[]) {
+		try {
+			Scanner sc = new Scanner(System.in);
+		    	System.out.println("Enter the username");
+			String checku = sc.nextLine();
+			System.out.println("Enter the password");
+			String checkp = sc.nextLine();
+					
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/abhi", "root", "admin");
+
+			Statement stmt = con.createStatement();
+			
+			ResultSet rs = stmt.executeQuery("select * from abhi.Login_details");
+			
+			
+			int flag=0;
+			while (rs.next()) {
+				//System.out.println(rs.getString(1) + "  " + rs.getString(2));
+				if(rs.getString(1).equals(checku) && rs.getString(2).equals(checkp)) {
+					flag=1;
+					break;
+				}
+			}
+			if(flag==1) {
+				System.out.println("Congratulations");
+			}
+			else if(flag==0) {
+				System.out.println("Invalid credentials");
+			}
+			rs.close();
+		}
+			catch (Exception e) {
+				System.out.println(e);
+			}
+
+}
+}

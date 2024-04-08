@@ -1,0 +1,21 @@
+create table hall_booking_status (
+hall_name varchar(255),
+hall_period varchar(255),
+hall_status varchar(255),
+hall_admin varchar(255),
+hall_booked_faculty varchar(255)
+);
+
+alter table hall_booking_status
+add event_name varchar(255);
+
+insert into hall_booking_status
+values('Hall_1','Hour_5','Booked','Admin_1','','');
+	
+select * from hall_booking_status
+where hall_status = 'Free'
+;
+
+update hall_booking_status
+set hall_status='Free'
+where hall_name='Hall_1' and hall_period='Hour_1';
